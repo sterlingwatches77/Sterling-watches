@@ -75,11 +75,11 @@ const srcList_nw = [
   "../rolex-images/rolex-daytona-2.webp",
   "../rolex-images/rolex-daytona-2-org.webp",
   "../rolex-images-2/rolex-black-goldmaster.webp",
-  "../rolex-images-2/rolex-images-2/rolex-black-goldmaster-org.webp",
+  "../rolex-images-2/rolex-images2-org/rolex-black-goldmaster-org.webp",
   "../imagessterling/rolex1.webp",
   "../imagessterling/rolex1-o.webp",
   "../rolex-images-2/rolex-daytona-diamond.webp",
-  "../rolex-images-2/rolex-images-2/rolex-daytona-diamond-org.webp"
+  "../rolex-images-2/rolex-images2-org/rolex-daytona-diamond-org.webp"
 ];
 
 const images_nw = srcList_nw.map(src => ({ main: src, thumb: src }));
