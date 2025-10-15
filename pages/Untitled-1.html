@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Popup overlay */
+        #popup-overlay{display:none; position:fixed; inset:0; background:rgba(0,0,0,0.35); z-index:1000; justify-content:center; align-items:center;}
+        /* Popup container */
+        #popup-form-container{background:#fff; border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.18); width: min(400px,95vw); padding:24px 20px 18px 20px; position:relative}
+        #close-popup-btn{position:absolute; top:10px; right:10px; background:transparent; border:none; font-size:22px; cursor:pointer}
+        /* Form inputs */
+        #popup-form input[type="text"], #popup-form input[type="tel"], #popup-form input[type="email"]{width:100%; padding:7px 9px; margin-top:4px; border-radius:5px; border:1px solid #ccc}
+        #popup-form button[type="submit"]{width:100%; padding:10px 0; background:#1e90ff; color:#fff; border:none; border-radius:5px; font-size:16px; cursor:pointer}
+        #popup-trigger-container{margin:18px 0}
+        label{font-weight:500}
+    </style>
+</head>
+<body>
+    <!-- Trigger button in a separate div -->
+    <div id="popup-trigger-container">
+        <button id="open-popup-btn">Open Form</button>
+    </div>
+
+    <!-- Popup overlay and form container -->
+    <div id="popup-overlay">
+        <div id="popup-form-container">
+            <!-- Cross button -->
+            <button id="close-popup-btn">&times;</button>
+            <form id="popup-form"  method="POST" action="https://submify.vercel.app/websbyalyxemran@gmail.com" enctype="multipart/form-data">
+                <div style="margin-bottom:12px;">
+                    <label for="full-name">Full Name</label><br>
+                    <input type="text" id="full-name" name="full-name" style="width:100%;padding:7px 9px; margin-top:4px; border-radius:5px; border:1px solid #ccc;" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="mobile">Mobile Number</label><br>
+                    <input type="tel" id="mobile" name="mobile" style="width:100%;padding:7px 9px; margin-top:4px; border-radius:5px; border:1px solid #ccc;" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="area-label">Area Label</label><br>
+                    <input type="text" id="area-label" name="area-label" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="address">Address</label><br>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="city">City</label><br>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="city">File</label><br>
+                    <input type="file" id="city" name="attachment" accept="image/png, image/jpeg, image/webp, image/jpg" required>
+                </div>
+                <div style="margin-bottom:18px;">
+                    <label for="postal-code">Postal Code</label><br>
+                    <input type="text" id="postal-code" name="postal-code" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <form method="POST" action="https://submify.vercel.app/websbyalyxemran@gmail.com" enctype="multipart/form-data">
+    <input type="email" name="email" placeholder="Your email">
+     <input type="number" name="phonenumber" placeholder="Your numer">
+      <input type="text" name="address" placeholder="Your address">
+    <textarea name="message" placeholder="Details of your problem"></textarea>
+    <input type="file" name="attachment" accept="image/png, image/jpeg">
+    <button type="submit">Send Test</button>
+</form>
+    <script>
+        // Show popup
+        document.getElementById('open-popup-btn').onclick = function() {
+            document.getElementById('popup-overlay').style.display = 'flex';
+        };
+        // Hide popup
+        document.getElementById('close-popup-btn').onclick = function() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        };
+        // Optional: close popup when clicking outside the form
+        document.getElementById('popup-overlay').onclick = function(e) {
+            if(e.target === this) this.style.display = 'none';
+        };
+    </script>
+</body>
+</html>
